@@ -9,11 +9,11 @@ class AppException extends Exception
     public string $errorMessage;
     public int $errorCode;
 
-    private function __construct($errorMessage, $errorCode) {
+    private function __construct(string $errorMessage, int $errorCode) {
         parent::__construct($errorMessage, $errorCode);
 
-        $this->$errorMessage = $errorMessage;
-        $this->$errorCode = $errorCode;
+        $this->errorMessage = $errorMessage;
+        $this->errorCode = $errorCode;
     }
 
     public static function BadRequest(
